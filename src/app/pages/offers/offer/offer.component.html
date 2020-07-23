@@ -1,0 +1,355 @@
+<div class="px-3">     
+    <div class="theme-container"> 
+    
+        <mat-sidenav-container class="single-offer mt-3">
+            <mat-sidenav #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" position="end" autoFocus="false" (openedChange)="onOpenedChange()">
+                <button fxHide="false" fxHide.gt-sm="true" mat-mini-fab color="warn" class="close" (click)="sidenav.close()">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <mat-card [perfectScrollbar]="psConfig"> 
+
+                    <div class="widget"> 
+                        <mat-card *ngIf="agent">
+                            <img mat-card-image [src]="agent.image" [alt]="agent.fullName"> 
+                            <mat-card-content>
+                                <h2 class="fw-600">Agent {{agent.fullName}}</h2>
+                                <app-rating [ratingsCount]="agent.ratingsCount" [ratingsValue]="agent.ratingsValue"></app-rating>
+                                <p class="mt-3">{{agent.desc}}</p>                                    
+                                <p fxLayoutAlign="start center"><mat-icon color="primary" matTooltip="Organization" matTooltipPosition="above">business</mat-icon><span class="mx-2">{{agent.organization}}</span></p>
+                                <p fxLayoutAlign="start center"><mat-icon color="primary">email</mat-icon><span class="mx-2">{{agent.email}}</span></p>
+                                <p fxLayoutAlign="start center"><mat-icon color="primary">call</mat-icon><span class="mx-2">{{agent.phone}}</span></p>
+                            </mat-card-content>
+                            <mat-divider></mat-divider>
+                            <mat-card-actions fxLayoutAlign="space-between center">
+                                <div fxLayout="row" fxLayoutAlign="start center" class="text-muted">
+                                    <a [href]="'https://www.facebook.com/'+agent.social.facebook" target="blank" class="social-icon">
+                                        <svg class="mat-icon" viewBox="0 0 24 24">
+                                        <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z" />
+                                        </svg>
+                                    </a>
+                                    <a [href]="'https://twitter.com/'+agent.social.twitter" target="blank" class="social-icon">
+                                        <svg class="mat-icon" viewBox="0 0 24 24">
+                                            <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M17.71,9.33C18.19,8.93 18.75,8.45 19,7.92C18.59,8.13 18.1,8.26 17.56,8.33C18.06,7.97 18.47,7.5 18.68,6.86C18.16,7.14 17.63,7.38 16.97,7.5C15.42,5.63 11.71,7.15 12.37,9.95C9.76,9.79 8.17,8.61 6.85,7.16C6.1,8.38 6.75,10.23 7.64,10.74C7.18,10.71 6.83,10.57 6.5,10.41C6.54,11.95 7.39,12.69 8.58,13.09C8.22,13.16 7.82,13.18 7.44,13.12C7.81,14.19 8.58,14.86 9.9,15C9,15.76 7.34,16.29 6,16.08C7.15,16.81 8.46,17.39 10.28,17.31C14.69,17.11 17.64,13.95 17.71,9.33Z" />
+                                        </svg> 
+                                    </a>
+                                    <a [href]="'https://www.linkedin.com/'+agent.social.linkedin" target="blank" class="social-icon"> 
+                                        <svg class="mat-icon" viewBox="0 0 24 24">
+                                        <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                                        </svg>
+                                    </a>
+                                    <a [href]="'https://instagram.com/'+agent.social.instagram" target="blank" class="social-icon"> 
+                                        <svg class="mat-icon" viewBox="0 0 24 24">
+                                            <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                                        </svg>
+                                    </a> 
+                                    <a [href]="agent.social.website" target="blank" class="social-icon"> 
+                                        <svg class="mat-icon" viewBox="0 0 24 24">
+                                            <path d="M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z" />
+                                        </svg>
+                                    </a>  
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/agents', agent.id]" mat-button color="primary" class="uppercase">View Profile</a>
+                                </div> 
+                            </mat-card-actions>                              
+                        </mat-card>
+                    </div> 
+                    
+                    <div class="widget">
+                        <h3 class="widget-title bg-primary">Reply to the listing</h3>
+                        <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit(contactForm.value)">
+                            <p>Interested in renting or buying this offer? Then send us an email.</p>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Name</mat-label>
+                                <input matInput placeholder="Your Name" autocomplete="off" formControlName="name">
+                                <mat-error *ngIf="contactForm.controls.name.errors?.required">Name is required</mat-error>                   
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>E-mail</mat-label> 
+                                <input matInput placeholder="Your Email" autocomplete="off" formControlName="email">
+                                <mat-error *ngIf="contactForm.controls.email.errors?.required">Email is required</mat-error>
+                                <mat-error *ngIf="contactForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Phone</mat-label>
+                                <input matInput placeholder="Your Phone" autocomplete="off" formControlName="phone" type="number"> 
+                                <mat-error *ngIf="contactForm.controls.phone.errors?.required">Phone is required</mat-error>                 
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Message</mat-label> 
+                                <textarea matInput placeholder="Your Message" formControlName="message" rows="6"></textarea> 
+                                <mat-error *ngIf="contactForm.controls.message.errors?.required">Message is required</mat-error>
+                            </mat-form-field>  
+                            <div class="text-center">
+                                <button mat-raised-button color="accent" type="submit">Send Email</button>
+                            </div>
+                        </form>
+                    </div>
+                   
+                    <div class="widget">
+                        <h3 class="widget-title bg-primary">Mortgage Calculator</h3>
+                        <form [formGroup]="mortgageForm" (ngSubmit)="onMortgageFormSubmit(mortgageForm.value)">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Principal Amount</mat-label>
+                                <input matInput placeholder="$" autocomplete="off" formControlName="principalAmount" type="number">                  
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Down Payment</mat-label>
+                                <input matInput placeholder="$" autocomplete="off" formControlName="downPayment" type="number">                  
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Interest Rate</mat-label>
+                                <input matInput placeholder="%" autocomplete="off" formControlName="interestRate" type="number">                  
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Period</mat-label>
+                                <input matInput placeholder="Number of Years" autocomplete="off" formControlName="period" type="number">                  
+                            </mat-form-field>
+                            <p *ngIf="monthlyPayment">Monthly Payment: <span class="mx-2 fw-500">${{monthlyPayment}}</span></p>
+                            <div class="text-center">
+                                <button mat-raised-button color="accent" type="submit">Calculate Mortgage</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div fxLayout="column" class="widget">
+                        <h3 class="widget-title bg-primary">Featured Offers</h3>
+                        <div *ngFor="let prop of featuredOffers" class="mb-3">
+                            <app-offer-item [offer]="prop" [viewType]="'grid'"></app-offer-item> 
+                        </div> 
+                    </div>
+                   
+                </mat-card>
+            </mat-sidenav>
+            <mat-sidenav-content ngClass.gt-sm="distance">
+                <mat-card fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">             
+                    <div>
+                        <h2 class="uppercase" ngClass.xs="text-center">{{offer?.title}}</h2>
+                        <p fxLayout="row" fxLayoutAlign.xs="center" class="address mb-0">
+                            <mat-icon class="text-muted">location_on</mat-icon>
+                            <span>{{offer?.formattedAddress}}</span>
+                        </p>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign.xs="center center" class="mx-3">                      
+                        <h2 *ngIf="settings.currency == 'USD'" class="primary-color price">
+                            <span *ngIf="offer?.priceDollar.sale">{{offer?.priceDollar.sale | currency : 'USD' : 'symbol' : '1.0'}}</span>
+                            <span *ngIf="offer?.priceDollar.rent">{{offer?.priceDollar.rent | currency : 'USD' : 'symbol' : '1.0'}} /month</span>
+                        </h2>
+                        <h2 *ngIf="settings.currency == 'EUR'" class="primary-color price">
+                            <span *ngIf="offer?.priceEuro.sale">{{offer?.priceEuro.sale | currency : 'EUR' : 'symbol' : '1.0'}}</span>
+                            <span *ngIf="offer?.priceEuro.rent">{{offer?.priceEuro.rent | currency : 'EUR' : 'symbol' : '1.0'}} /month</span>
+                        </h2>
+                        <app-rating [ratingsCount]="offer?.ratingsCount" [ratingsValue]="offer?.ratingsValue"></app-rating> 
+                    </div>
+                    <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>                                  
+                </mat-card>
+
+                <mat-card class="mt-3">
+                    <div class="main-carousel mb-3"> 
+                        <div *ngIf="offer" class="control-icons">
+                            <button mat-button [disabled]="onFavorites()" (click)="addToFavorites()" matTooltip="Add To Favorite">
+                                <mat-icon class="">favorite_border</mat-icon>
+                            </button>
+                            <button mat-button [disabled]="onCompare()" (click)="addToCompare()" matTooltip="Add To Compare">
+                                <mat-icon class="">compare_arrows</mat-icon>
+                            </button>  
+                        </div>   
+                        <div id="main-carousel" class="swiper-container" [swiper]="config" (indexChange)="onIndexChange($event)"> 
+                            <div class="swiper-wrapper">      
+                                <div *ngFor="let image of offer?.gallery" class="swiper-slide">
+                                    <img [attr.data-src]="image.big" class="swiper-lazy">
+                                    <div class="swiper-lazy-preloader"></div>          
+                                </div>
+                            </div>                      
+                            <button mat-mini-fab color="primary" class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                            <button mat-mini-fab color="primary" class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button> 
+                        </div>
+                    </div>
+                    <div class="small-carousel">   
+                        <div id="small-carousel" class="swiper-container" [swiper]="config2"> 
+                            <div class="swiper-wrapper">      
+                                <div *ngFor="let image of offer?.gallery; let i=index;" class="swiper-slide" [ngClass]="'thumb-'+i" [class.active-thumb]="i == 0">
+                                    <img [attr.data-src]="image.small" class="swiper-lazy mw-100" (click)="selectImage(i)">
+                                    <div class="swiper-lazy-preloader"></div>          
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </mat-card> 
+                
+                
+                <mat-card *ngIf="offer" class="mt-3">
+                    <mat-card-header fxLayoutAlign="center center"> 
+                        <mat-card-title class="uppercase">Details</mat-card-title> 
+                    </mat-card-header>
+                    <div fxLayout="row wrap" class="details">
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Offer Type:</span>
+                            <span>{{offer.offerType}}</span>
+                        </div> 
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Offer Status:</span>
+                            <div fxLayout="row wrap" class="list">
+                                <span *ngFor="let status of offer.offerStatus; let last=last" [class.list-item]="offer.offerStatus.length > 1" [class.last]="last">{{status}}</span>
+                            </div>
+                        </div> 
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>City:</span>
+                            <span>{{offer.city}}</span>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Zip Code:</span>
+                            <span>{{offer.zipCode}}</span>
+                        </div> 
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Neighborhood:</span>
+                            <div fxLayout="row wrap" class="list">
+                                <span *ngFor="let neighborhood of offer.neighborhood; let last=last" [class.list-item]="offer.neighborhood.length > 1" [class.last]="last">{{neighborhood}}</span>
+                            </div>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Street:</span>
+                            <div fxLayout="row wrap" class="list">
+                                <span *ngFor="let street of offer.street; let last=last" [class.list-item]="offer.street.length > 1" [class.last]="last">{{street}}</span>
+                            </div>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Bedrooms:</span>
+                            <span>{{offer.bedrooms}}</span>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Bathrooms:</span>
+                            <span>{{offer.bathrooms}}</span>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Garages:</span>
+                            <span>{{offer.garages}}</span>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Offer size:</span>
+                            <span>{{offer.area.value}} {{offer.area.unit}}</span>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+                            <span>Year Built:</span>
+                            <span>{{offer.yearBuilt}}</span>
+                        </div>
+                    </div>   
+                </mat-card>
+
+                <mat-card class="mt-3"> 
+                    <mat-card-header fxLayoutAlign="center center"> 
+                        <mat-card-title class="uppercase">Features</mat-card-title> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div fxLayout="row wrap">
+                            <div *ngFor="let feature of offer?.features" fxFlex="100" fxFlex.gt-xs="33.3">
+                                <mat-icon class="mat-icon-sm" color="primary">check</mat-icon>
+                                <span class="mx-2">{{feature}}</span>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card class="mt-3"> 
+                    <mat-card-header fxLayoutAlign="center center"> 
+                        <mat-card-title class="uppercase">Additional features</mat-card-title> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div fxLayout="row wrap" class="details">
+                            <div *ngFor="let feature of offer?.additionalFeatures" fxFlex="100" fxFlex.gt-xs="50" class="item">
+                                <span>{{feature.name}}:</span>
+                                <span>{{feature.value}}</span>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card class="mt-3"> 
+                    <mat-card-header fxLayoutAlign="center center"> 
+                        <mat-card-title class="uppercase">Description</mat-card-title> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>{{offer?.desc}}</p>
+                        <p>{{offer?.desc}}</p>
+                        <p>{{offer?.desc}}</p>
+                    </mat-card-content>
+                </mat-card> 
+
+                <mat-card class="mt-3"> 
+                    <mat-card-header fxLayoutAlign="center center"> 
+                        <mat-card-title class="uppercase">Location</mat-card-title> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <agm-map [latitude]="offer?.location.lat" [longitude]="offer?.location.lng" [mapTypeControl]="true" [fullscreenControl]="true">
+                            <agm-marker [latitude]="offer?.location.lat" [longitude]="offer?.location.lng" [markerDraggable]="false"></agm-marker>
+                        </agm-map>
+                    </mat-card-content>                   
+                </mat-card>
+
+                <mat-card class="mt-3"> 
+                    <mat-card-header fxLayoutAlign="center center"> 
+                        <mat-card-title class="uppercase">Plans</mat-card-title> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-accordion>
+                            <mat-expansion-panel *ngFor="let plan of offer?.plans; let i = index;" [expanded]="i === 0">
+                                <mat-expansion-panel-header>  
+                                    <mat-panel-title fxLayout="row" fxLayoutAlign="space-between">
+                                        <div class="fw-500">{{plan.name}}</div>
+                                        <div fxShow="false" fxShow.gt-xs="true" class="text-muted">
+                                            <span>Area: <span class="fw-500">{{plan.area.value}} {{plan.area.unit}}</span></span>
+                                            <span class="mx-3">Rooms: <span class="fw-500">{{plan.rooms}}</span></span>
+                                            <span>Baths: <span class="fw-500">{{plan.baths}}</span></span>   
+                                        </div>
+                                    </mat-panel-title> 
+                                </mat-expansion-panel-header>                                  
+                                <img [src]="plan.image" [alt]="plan.name" class="mw-100">
+                                <p>{{plan.desc}}</p>
+                            </mat-expansion-panel> 
+                        </mat-accordion>                         
+                    </mat-card-content>
+                </mat-card> 
+
+                <mat-card *ngIf="offer" class="mt-3"> 
+                    <mat-card-header fxLayoutAlign="center center"> 
+                        <mat-card-title class="uppercase">Videos</mat-card-title> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-video [src]="offer.videos[0].link" [title]="offer.videos[0].name" [download]="true" [keyboard]="false"></mat-video>
+                        <div class="mt-5">
+                            <h3 class="text-center fw-500">{{offer.videos[1].name}}</h3>
+                            <div [innerHtml]="embedVideo" class="videoWrapper"></div>                                    
+                        </div>                             
+                    </mat-card-content>
+                </mat-card>                
+
+                <mat-card class="mt-3" fxLayout="row wrap" fxLayoutAlign="space-between center"> 
+                    <span>ID:<span class="fw-500 mx-2">{{offer?.id}}</span></span>
+                    <span>Published:<span class="fw-500 mx-2">{{offer?.published | date:"dd MMMM, yyyy"}}</span></span>
+                    <span>Last Update:<span class="fw-500 mx-2">{{offer?.lastUpdate | date:"dd MMMM, yyyy"}}</span></span>
+                    <span>Views:<span class="fw-500 mx-2">{{offer?.views}}</span></span> 
+                </mat-card>
+
+                <app-comments *ngIf="offer" [offerId]="offer.id"></app-comments>  
+
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+
+    </div>
+</div>
+ 
+<div class="section mt-3">
+    <div class="px-3">
+        <div class="theme-container"> 
+            <h1 class="section-title">Related offers</h1>            
+            <app-offers-carousel [offers]="relatedOffers"></app-offers-carousel>                        
+        </div>
+    </div>   
+</div> 
+
+<app-get-in-touch></app-get-in-touch>

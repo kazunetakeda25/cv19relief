@@ -1,0 +1,23 @@
+<div *ngFor="let menu of menuItems" class="menu-item">
+  <a *ngIf="menu.routerLink && !menu.hasSubMenu" mat-button
+      fxLayout="row" fxLayoutAlign="start center"
+      [routerLink]="[menu.routerLink]" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"        
+      (click)="onClick(menu.id)" [id]="'menu-item-'+menu.id">
+      <span class="menu-title">{{menu.title}}</span>
+  </a>
+  <a *ngIf="menu.href && !menu.hasSubMenu" mat-button 
+      fxLayout="row" fxLayoutAlign="start center"
+      [attr.href]="menu.href || ''" [attr.target]="menu.target || ''"       
+      (click)="onClick(menu.id)" [id]="'menu-item-'+menu.id">
+      <span class="menu-title">{{menu.title}}</span>
+  </a>
+  <a *ngIf="menu.hasSubMenu" mat-button 
+      fxLayout="row" fxLayoutAlign="start center"       
+      (click)="onClick(menu.id)" [id]="'menu-item-'+menu.id">
+      <span class="menu-title">{{menu.title}}</span>
+      <mat-icon class="menu-expand-icon transition-2">arrow_drop_down</mat-icon>
+  </a>
+  <div *ngIf="menu.hasSubMenu" class="sub-menu" [id]="'sub-menu-'+menu.id">
+      <app-vertical-menu [menuParentId]="menu.id"></app-vertical-menu>
+  </div>
+</div>

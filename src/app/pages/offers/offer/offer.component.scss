@@ -1,0 +1,75 @@
+.main-carousel{ 
+    .swiper-slide{              
+        text-align: center;
+        padding-bottom: 66.25%;
+        position: relative;
+        overflow: hidden;  
+        background: rgba(0, 0, 0, 0.04);         
+    }
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    } 
+    .control-icons{ 
+        position: absolute;
+        z-index: 2; 
+        top: 24px;
+        right: 20px;
+        button.mat-button{
+            min-width: 36px;
+            width: 36px;
+            padding: 0;
+            margin: 0 4px;
+            background: rgba(255, 252, 252, 0.6);
+            transition: 0.2s; 
+            color:rgba(0, 0, 0, 0.87);
+            &:disabled{
+                color: rgba(0, 0, 0, 0.26); 
+            }
+            &:hover:enabled{
+                background: rgba(255, 252, 252, 1);
+            }             
+        }
+    }
+}
+.small-carousel{ 
+    .swiper-slide{  
+        img{
+            display: block;
+            opacity: 0.3;
+        }
+        &.active-thumb{
+            img{ 
+                border-width: 3px;
+                border-style: solid;
+                box-sizing: border-box;
+                opacity: 1;
+            }           
+        } 
+        .swiper-lazy-preloader{
+            margin-top: 10px;
+        }        
+    } 
+}
+ 
+.widget{ 
+    margin-bottom: 40px;
+    .widget-title{
+        margin: 0 -16px 16px;
+        padding: 8px 16px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    &:first-child{  
+        .widget-title{
+            margin: -16px -16px 16px;
+            padding: 8px 16px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    } 
+} 

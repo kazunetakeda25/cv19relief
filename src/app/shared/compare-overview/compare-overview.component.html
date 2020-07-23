@@ -1,0 +1,28 @@
+<mat-toolbar fxLayoutAlign="space-between center">      
+  <a routerLink="/compare" (click)="hideSheet(true)" mat-raised-button color="primary">Compare - {{ offers.length }}</a>        
+  <div fxLayout="row" fxLayoutAlign="end center">
+      <button mat-icon-button (click)="appService.Data.compareList.length = 0; hideSheet(false)" matTooltip="Clear Compare List">
+        <mat-icon color="warn" class="mat-icon-lg">cancel</mat-icon> 
+      </button>
+      <button mat-icon-button (click)="hideSheet(false)" matTooltip="Hide">
+        <mat-icon color="primary" class="mat-icon-lg">arrow_drop_down_circle</mat-icon> 
+      </button>
+  </div>
+</mat-toolbar>
+<mat-nav-list>
+  <a mat-list-item *ngFor="let offer of offers" [routerLink]="['/offers', offer.id]" (click)="hideSheet(true)">
+    <h3 mat-line class="fw-500">{{offer.title}}</h3>
+    <i mat-line><mat-icon class="mat-icon-sm text-muted">location_on</mat-icon><small>{{offer.formattedAddress}}</small></i>
+    <span *ngIf="settings.currency == 'USD'" class="primary-color price fw-500 mx-2">
+        <span *ngIf="offer.priceDollar.sale">{{offer.priceDollar.sale | currency : 'USD' : 'symbol' : '1.0'}}</span>
+        <span *ngIf="offer.priceDollar.rent">{{offer.priceDollar.rent | currency : 'USD' : 'symbol' : '1.0'}} /month</span>
+    </span>
+    <span *ngIf="settings.currency == 'EUR'" class="primary-color price fw-500 mx-2">
+        <span *ngIf="offer.priceEuro.sale">{{offer.priceEuro.sale | currency : 'EUR' : 'symbol' : '1.0'}}</span>
+        <span *ngIf="offer.priceEuro.rent">{{offer.priceEuro.rent | currency : 'EUR' : 'symbol' : '1.0'}} /month</span>
+    </span>  
+    <button mat-icon-button color="warn" class="remove" (click)="remove(offer, $event)" matTooltip="Remove" matTooltipPosition="after">
+        <mat-icon class="mat-icon-sm">close</mat-icon>
+    </button>
+  </a>
+</mat-nav-list>

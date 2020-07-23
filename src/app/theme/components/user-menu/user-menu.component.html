@@ -1,0 +1,35 @@
+<a mat-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger">
+    <mat-icon class="mat-icon-sm">person</mat-icon>
+    <span fxShow="false" fxShow.gt-sm class="mx-1 uppercase">account</span> 
+    <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+</a>
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-menu-panel user-menu">
+    <span (mouseleave)="userMenuTrigger.closeMenu()">
+        <div fxLayout="row" fxLayoutAlign="start center" class="user-info">                   
+            <img src="assets/images/others/user.jpg" alt="user-image" width="50">
+            <p class="m-0">Rey<br> <small><i>rey</i></small></p>
+        </div>
+        <div class="divider"></div>
+        <a mat-menu-item routerLink="/account/profile"> 
+            <mat-icon class="mat-icon-sm">person</mat-icon>
+            <span>Profile</span> 
+        </a>
+        <a mat-menu-item routerLink="/account/my-offers"> 
+            <mat-icon class="mat-icon-sm">favorite</mat-icon>
+            <span>My Saved Deals</span> 
+        </a>
+        <a mat-menu-item routerLink="/account/deal-control-panel"> 
+            <mat-icon class="mat-icon-sm">view_list</mat-icon>
+            <span>Merchants</span> 
+        </a>
+        <a mat-menu-item routerLink="/submit-offer"> 
+            <mat-icon class="mat-icon-sm">add_circle</mat-icon>
+            <span>Submit Offer</span> 
+        </a>
+        <div class="divider"></div>
+        <a mat-menu-item routerLink="/login"> 
+            <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
+            <span>Sign Out</span> 
+        </a>
+    </span>
+</mat-menu>  

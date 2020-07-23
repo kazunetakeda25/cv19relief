@@ -1,0 +1,180 @@
+@mixin theme-reset($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .bg-primary {
+        @include _mat-toolbar-color($primary);
+    }
+    .bg-accent {
+        @include _mat-toolbar-color($accent);
+    }
+    .bg-warn {
+        @include _mat-toolbar-color($warn);
+    }
+
+    .text-muted {
+        color: mat-color($foreground, secondary-text) !important;
+    }
+    .primary-color{
+        color: mat-color($primary);
+    }
+    .secondary-color{
+        color: mat-color($primary, 100);
+    }
+    .v-divider{
+        background-color: mat-color($foreground, divider);
+    }
+    .divider{
+        border-top: 1px solid mat-color($foreground, divider);
+    }
+
+    .top-toolbar.mat-toolbar .v-divider{
+        background-color: mat-color($primary, lighter, 0.2);
+    }
+    .border-bottom-lighter{
+        border-bottom: 1px solid mat-color($primary, lighter, 0.2);
+    }
+    .border-lighter{
+        border-color: mat-color($primary, lighter, 0.2);
+    }
+    .border-accent{
+        border-color: mat-color($accent);        
+    }
+
+    #top-toolbar{
+        @include _mat-toolbar-color($primary);
+    }
+    .toolbar-2 #top-toolbar{
+        background-color: mat-color($background, card);
+        color: mat-color($foreground, text);
+    }
+    #main-toolbar{
+        background: mat-color($background, card);
+    }
+    .toolbar-2 #main-toolbar{
+        @include _mat-toolbar-color($primary);
+    }
+    header{
+        .logo svg{
+            fill: mat-color($primary);
+        } 
+        &.toolbar-1{        
+            &.has-bg-image:not(.main-toolbar-fixed){
+                .logo svg{
+                    fill: #fff;
+                }
+                .horizontal-menu{
+                    .mat-button{
+                        color:#fff;
+                        &.horizontal-active-link{
+                            background: rgba(mat-color($primary), 0.38);
+                        }                       
+                    }
+                }                
+                .mat-icon{
+                    color:#fff;
+                }
+            } 
+        }
+        &.toolbar-2{
+            .horizontal-menu{
+                .mat-button{
+                    color:#fff;
+                    &.horizontal-active-link{
+                        color:#fff;
+                    }                       
+                }
+            }
+            &.has-bg-image:not(.main-toolbar-fixed){
+                .horizontal-menu{
+                    .mat-button{
+                        &.horizontal-active-link{
+                            background: rgba(mat-color($primary), 0.38);
+                        }                       
+                    }
+                }
+            }  
+            
+        }      
+    }
+
+    .header-carousel .slide-info .mat-card{
+        background: rgba(mat-color($background, card), 0.85);
+        &:hover{
+            background: mat-color($background, card);
+        }
+    }
+    
+    .user-menu .user-info {
+        color: mat-color($foreground, text);
+    }
+
+    main.content-offset-to-top{
+        .main-content-header{
+            border-top: 5px solid mat-color($primary);
+        }
+    }
+
+    .offer-item .title a,
+    .compare-item .title a{
+        color: mat-color($foreground, text);
+        &:hover{
+            color: mat-color($primary);
+        }        
+    }
+    .features p:after,
+    .compare-item .details .item { 
+        border-bottom: 1px dotted  mat-color($foreground, divider); 
+    }
+
+    .small-carousel .swiper-slide.active-thumb img{ 
+        border-color: mat-color($primary);
+    }
+  
+
+    .ps__thumb-y{
+        background-color: mat-color($primary, 900);
+    }
+
+
+    .active-link{
+        background-color: mat-color($primary); 
+        color: #fff;
+    }
+    .horizontal-active-link {
+        background: mat-color($background, hover);
+        color: mat-color($primary); 
+    }
+    .horizontal-sub-menu{ 
+        .mat-button, .mat-menu-item{
+            color: mat-color($foreground, text);
+            &.horizontal-active-link { 
+                color: mat-color($primary); 
+            }
+        }
+    }
+    
+ 
+    .section .section-title:after,
+    .section.testimonials .swiper-pagination-bullet-active {        
+        background-color: mat-color($primary); 
+    }
+     
+
+    .custom-table.mat-table .mat-header-row, 
+    .custom-table.mat-table .mat-row {
+        border-color: mat-color($foreground, divider);
+    }
+
+    .submit-offer .step-section,
+    .edit-offer .step-section{
+        background: rgba(mat-color($background, background), 0.7);
+    }
+    .input-file-container .mat-orphan-label{
+        color: mat-color($foreground, text) !important;
+    }
+ 
+}

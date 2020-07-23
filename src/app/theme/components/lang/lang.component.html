@@ -1,0 +1,12 @@
+<a mat-button [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger">
+    <img [src]="flag.image" width="18">
+    <span fxShow="false" fxShow.gt-md class="uppercase flag-name">{{flag.name}}</span>
+    <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+</a>
+<mat-menu #langMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-menu-panel">
+    <span (mouseleave)="langMenuTrigger.closeMenu()">
+        <button mat-menu-item *ngFor="let flag of flags" (click)="changeLang(flag)">
+            <img [src]="flag.image" width="18" class="mat-elevation-z1"><span class="flag-name">{{flag.name}}</span>
+        </button>
+    </span>
+</mat-menu>

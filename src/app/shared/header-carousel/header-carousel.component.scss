@@ -1,0 +1,110 @@
+@import "../../theme/styles/variables";
+
+.header-carousel{ 
+    height: $header-carousel-height;
+    .slide-item{
+        height: 100%;
+        background-size: cover;
+        background-position: center;      
+    }
+    .swiper-lazy-preloader{
+        top: 15%;
+    }
+    .slide-info{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;    
+        z-index: 2;
+        .mat-card{
+            text-align: center;
+            min-width: 450px;           
+            transition: 0.4s;
+            margin: 0 16px;            
+            .slide-title{   
+                font-size: 32px;
+                line-height: 32px;
+                margin-bottom: 16px;
+                text-transform: uppercase;
+            }
+            .location{
+                font-size: 18px;
+                font-style: italic;
+                margin-bottom: 24px;
+                font-weight: 500;
+            }
+            .price{
+                font-size: 24px;
+                min-width: 200px;
+                padding: 8px 16px;
+            }
+        }
+    }
+    &.offset-bottom{
+        height: $header-carousel-height + $main-content-header-offset-to-top;        
+        .slide-info{
+            padding-bottom: $main-content-header-offset-to-top;
+        }
+    }
+}
+
+// xs
+@media screen and (max-width: 599px) {
+    .header-carousel{ 
+        // height: 320px;
+        height: $header-carousel-height - 120px;
+        &.offset-bottom{
+            height: $header-carousel-height + $main-content-header-offset-to-top - 120px;
+        } 
+        .slide-info{ 
+            .mat-card{
+                min-width: 240px;
+                .slide-title{   
+                    font-size: 24px;
+                    line-height: 24px;
+                    margin-bottom: 16px;
+                }
+                .location{
+                    font-size: 14px;
+                    margin-bottom: 19px;
+                    align-items: start !important;
+                }
+                .price{
+                    font-size: 14px;
+                    min-width: 120px;
+                    padding: unset;
+                }
+            }
+        }
+    }
+}
+
+// sm
+@media screen and (min-width: 600px) and (max-width: 959px) {  
+    .header-carousel{ 
+        // height: 360px;
+        height: $header-carousel-height - 80px;
+        &.offset-bottom{
+            height: $header-carousel-height + $main-content-header-offset-to-top - 80px;
+        }        
+        .slide-info{ 
+            .mat-card{
+                min-width: 400px;
+                .slide-title{   
+                    font-size: 28px;
+                    line-height: 28px;
+                    margin-bottom: 16px;
+                }
+                .location{
+                    font-size: 16px;
+                    margin-bottom: 24px;
+                }
+                .price{
+                    font-size: 20px;
+                    min-width: 160px;
+                    padding: 4px 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+<div class="px-3">
+  <div class="theme-container">
+
+    <div *ngIf="appService.Data.compareList.length == 0" class="py-5">  
+      <mat-chip-list>
+          <mat-chip color="warn" selected="true" class="uppercase">You have no offers to compare.</mat-chip>
+      </mat-chip-list>
+    </div>
+  
+    <div *ngIf="appService.Data.compareList.length > 0" class="compare-carousel py-3"> 
+      
+      <mat-card fxLayout="row" fxLayoutAlign="space-between center" class="compare-toolbar">      
+        <h3 class="uppercase">Compare: {{appService.Data.compareList.length}}</h3>      
+        <div fxLayout="row" fxLayoutAlign="center center" *ngIf="config.simulateTouch">
+            <button mat-mini-fab color="primary" class="carousel-prev swiper-button-prev swipe-arrow mx-2"><mat-icon>keyboard_arrow_left</mat-icon></button>
+            <button mat-mini-fab color="primary" class="carousel-next swiper-button-next swipe-arrow mx-2"><mat-icon>keyboard_arrow_right</mat-icon></button> 
+        </div> 
+        <button mat-mini-fab color="warn" fxHide="false" fxHide.gt-xs (click)="clear()"><mat-icon>cancel</mat-icon></button>
+        <button mat-raised-button color="warn" class="uppercase" fxShow="false" fxShow.gt-xs (click)="clear()">Clear All</button>
+      </mat-card>
+      
+      <div class="swiper-container h-100 carousel-outer mt-3" [swiper]="config"> 
+        <div class="swiper-wrapper h-100">      
+          <div *ngFor="let offer of appService.Data.compareList" class="swiper-slide">
+
+            <mat-card class="compare-item">                 
+                <img mat-card-image [src]="offer.gallery[0].medium" alt="image"> 
+                <button mat-icon-button class="remove" (click)="remove(offer)">
+                  <mat-icon color="warn" class="mat-icon-lg">highlight_off</mat-icon>
+                </button>              
+                <mat-card-content>
+                    <h2 class="title"><a [routerLink]="['/offers', offer.id]">{{offer.title}}</a></h2>
+                    <p fxLayout="row" fxLayoutAlign="center center" class="address">
+                        <mat-icon class="text-muted">location_on</mat-icon>
+                        <span>{{offer.formattedAddress}}</span>
+                    </p>
+                    <mat-chip-list>
+                        <mat-chip color="primary" selected="true" class="w-100">
+                            <h3 *ngIf="settings.currency == 'USD'" class="w-100 text-center">
+                                <span *ngIf="offer.priceDollar.sale">{{offer.priceDollar.sale | currency : 'USD' : 'symbol' : '1.0'}}</span>
+                                <span *ngIf="offer.priceDollar.rent">{{offer.priceDollar.rent | currency : 'USD' : 'symbol' : '1.0'}} /month</span>
+                            </h3>
+                            <h3 *ngIf="settings.currency == 'EUR'" class="w-100 text-center">
+                                <span *ngIf="offer.priceEuro.sale">{{offer.priceEuro.sale | currency : 'EUR' : 'symbol' : '1.0'}}</span>
+                                <span *ngIf="offer.priceEuro.rent">{{offer.priceEuro.rent | currency : 'EUR' : 'symbol' : '1.0'}} /month</span>
+                            </h3>
+                        </mat-chip>
+                    </mat-chip-list>
+                    <div class="details py-3">
+                        <div fxLayout="row" class="item">
+                          <span>Offer Type:</span>
+                          <span>{{offer.offerType}}</span>
+                        </div> 
+                        <div fxLayout="row" class="item">
+                          <span>Offer Status:</span>
+                          <div fxLayout="row wrap" class="list">
+                            <span *ngFor="let status of offer.offerStatus; let last=last" [class.list-item]="offer.offerStatus.length > 1" [class.last]="last">{{status}}</span>
+                          </div>
+                        </div> 
+                        <div fxLayout="row" class="item">
+                          <span>City:</span>
+                          <span>{{offer.city}}</span>
+                        </div>
+                        <div fxLayout="row" class="item">
+                          <span>Zip Code:</span>
+                          <span>{{offer.zipCode}}</span>
+                        </div>
+                        <div fxLayout="row" class="item">
+                            <span>Neighborhood:</span>
+                            <div fxLayout="row wrap" class="list">
+                              <span *ngFor="let neighborhood of offer.neighborhood; let last=last" [class.list-item]="offer.neighborhood.length > 1" [class.last]="last">{{neighborhood}}</span>
+                            </div>
+                        </div>
+                        <div fxLayout="row" class="item">
+                            <span>Street:</span>
+                            <div fxLayout="row wrap" class="list">
+                                <span *ngFor="let street of offer.street; let last=last" [class.list-item]="offer.street.length > 1" [class.last]="last">{{street}}</span>
+                            </div>
+                        </div>
+                        <div fxLayout="row" class="item">
+                          <span>Bedrooms:</span>
+                          <span>{{offer.bedrooms}}</span>
+                        </div>
+                        <div fxLayout="row" class="item">
+                          <span>Bathrooms:</span>
+                          <span>{{offer.bathrooms}}</span>
+                        </div>
+                        <div fxLayout="row" class="item">
+                          <span>Garages:</span>
+                          <span>{{offer.garages}}</span>
+                        </div>
+                        <div fxLayout="row" class="item">
+                          <span>Offer size:</span>
+                          <span>{{offer.area.value}} {{offer.area.unit}}</span>
+                        </div>
+                        <div fxLayout="row" class="item">
+                          <span>Year Built:</span>
+                          <span>{{offer.yearBuilt}}</span>
+                        </div>
+                        <div fxLayout="row" class="item">
+                          <span>Features:</span>
+                          <div fxLayout="row wrap" class="list">
+                            <span *ngFor="let feature of offer.features; let last=last" [class.list-item]="offer.features.length > 1" [class.last]="last">{{feature}}</span>
+                          </div>
+                        </div> 
+                        <div fxLayout="row" class="item">
+                          <span>Published:</span>
+                          <span>{{offer.published | date:"dd MMMM, yyyy" }}</span>
+                        </div>                         
+                    </div>
+                    <p class="uppercase text-center fw-500 mb-2">description</p>
+                    <p>{{offer.desc}}</p>                     
+                </mat-card-content> 
+                <mat-card-actions class="text-center">  
+                    <a [routerLink]="['/offers', offer.id]" mat-raised-button color="primary" class="uppercase mb-3">More info</a>                     
+                </mat-card-actions>             
+            </mat-card> 
+
+          </div>
+        </div>   
+      </div>
+
+    </div>
+
+  </div>
+</div>

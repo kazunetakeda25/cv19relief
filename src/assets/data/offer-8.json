@@ -1,0 +1,134 @@
+{
+    "id": 8,
+    "title": "Centrally located apartment", 
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+    "offerType": "Apartment",
+    "offerStatus": ["For Rent", "No Fees"],
+    "city": "Los Angeles",
+    "zipCode": "90028",
+    "neighborhood": ["Englewood", "Austin"],
+    "street": ["Englewood Street #2", "Austin Street #2"],
+    "location" : {
+        "lat": 34.100570,
+        "lng": -118.327440
+    },
+    "formattedAddress": "1627 Vine St, Los Angeles, CA 90028, USA", 
+    "features": ["Air Conditioning", "Refrigerator", "Dryer", "Microwave", "Gym", "Swimming Pool", "Sauna", "TV Cable", "WiFi"],
+    "featured": true, 
+    "priceDollar": {
+        "sale": null,
+        "rent": 5600
+    },
+    "priceEuro": {
+        "sale": null,
+        "rent": 5000
+    },
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "garages": 1,
+    "area": {
+        "value": 1600,
+        "unit": "ft²"
+    },
+    "yearBuilt": 2017,
+    "ratingsCount": 4,
+    "ratingsValue": 380,
+    "additionalFeatures": [                
+        {
+            "name": "Heat",
+            "value": "Natural Gas"
+        },
+        {
+            "name": "Roof",
+            "value": "Composition/Shingle"
+        },
+        {
+            "name": "Floors",
+            "value": "Wall-to-Wall Carpet"
+        },
+        {
+            "name": "Water",
+            "value": "District/Public"
+        },
+        {
+            "name": "Cross Streets",
+            "value": "Orangethorpe-Gilbert"
+        },
+        {
+            "name": "Windows",
+            "value": "Skylights"
+        },
+        {
+            "name": "Flat",
+            "value": "5"
+        },
+        {
+            "name": "Childroom",
+            "value": "2"
+        }
+    ],
+    "gallery": [
+        {
+            "small": "assets/images/props/apartment/1-small.jpg",
+            "medium": "assets/images/props/apartment/1-medium.jpg",
+            "big": "assets/images/props/apartment/1-big.jpg"
+        },
+        {
+            "small": "assets/images/props/apartment/2-small.jpg",
+            "medium": "assets/images/props/apartment/2-medium.jpg",
+            "big": "assets/images/props/apartment/2-big.jpg"
+        },
+        {
+            "small": "assets/images/props/apartment/3-small.jpg",
+            "medium": "assets/images/props/apartment/3-medium.jpg",
+            "big": "assets/images/props/apartment/3-big.jpg"
+        },
+        {
+            "small": "assets/images/props/apartment/4-small.jpg",
+            "medium": "assets/images/props/apartment/4-medium.jpg",
+            "big": "assets/images/props/apartment/4-big.jpg"
+        },
+        {
+            "small": "assets/images/props/apartment/5-small.jpg",
+            "medium": "assets/images/props/apartment/5-medium.jpg",
+            "big": "assets/images/props/apartment/5-big.jpg"
+        }
+    ],
+    "plans": [
+        {
+            "name": "First floor",
+            "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+            "area": {
+                "value": 1180,
+                "unit": "ft²"
+            },
+            "rooms": 3,
+            "baths": 1,
+            "image": "assets/images/others/plan-1.jpg"
+        },
+        {
+            "name": "Second floor",
+            "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+            "area": {
+                "value": 1200,
+                "unit": "ft²"
+            },
+            "rooms": 5,
+            "baths": 2,
+            "image": "assets/images/others/plan-2.jpg"
+        }
+    ],
+    "videos": [
+        {
+            "name": "Video with 'mat-video' plugin",
+            "link": "http://themeseason.com/data/videos/video-1.mp4"
+        },
+        {
+            "name": "Video with 'ngx-embed-video' plugin",
+            "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+        }
+    ],
+    "published": "2016-03-29 05:20:00",
+    "lastUpdate": "2019-06-26 14:20:00",
+    "views": 852
+}

@@ -1,0 +1,11 @@
+<div *ngIf="offers" class="offers-carousel">   
+    <div class="swiper-container h-100 carousel-outer" [swiper]="config"> 
+        <div class="swiper-wrapper h-100">      
+            <div *ngFor="let offer of offers" class="swiper-slide">
+                <app-offer-item [offer]="offer" [viewType]="'grid'"></app-offer-item>                 
+            </div>
+        </div>                      
+        <button mat-mini-fab color="primary" class="prop-prev swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button mat-mini-fab color="primary" class="prop-next swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button> 
+    </div>
+</div>

@@ -1,0 +1,14 @@
+@mixin menu-level-padding($direction){
+    $elem: '';
+    @for $i from 2 through 10 {
+        $elem: if($i == 2, ".sub-menu", selector-nest($elem, ".sub-menu"));      
+        #{$elem + ' .mat-button'} { 
+            @if $direction == "rtl" {
+                padding-right: 16px + (20px * $i);
+            } 
+            @else{
+                padding-left: 16px + (20px * $i);
+            }
+        }
+    }
+}

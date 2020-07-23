@@ -1,0 +1,46 @@
+@import "~@angular/material/theming";
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Montserrat'
+);
+
+@include mat-core($custom-typography);
+
+@import 'theme-reset';
+.app{
+    &.green{
+        @import "skins/green";
+        @include angular-material-theme($green-theme);
+        @include theme-reset($green-theme);
+    }
+    &.blue{
+        @import "skins/blue";
+        @include angular-material-theme($blue-theme);
+        @include theme-reset($blue-theme);
+    }
+    &.red{
+        @import "skins/red";
+        @include angular-material-theme($red-theme);
+        @include theme-reset($red-theme);
+    }
+    &.pink{
+        @import "skins/pink";
+        @include angular-material-theme($pink-theme);
+        @include theme-reset($pink-theme);
+    }
+    &.purple{
+        @import "skins/purple";
+        @include angular-material-theme($purple-theme);
+        @include theme-reset($purple-theme);
+    }
+    &.grey{
+        @import "skins/grey";
+        @include angular-material-theme($grey-theme);
+        @include theme-reset($grey-theme);
+    }
+    &.orange-dark{
+        @import "skins/orange-dark";
+        @include angular-material-theme($orange-dark-theme);
+        @include theme-reset($orange-dark-theme);     
+    }
+}

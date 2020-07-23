@@ -1,0 +1,26 @@
+<mat-toolbar id="top-toolbar" class="top-toolbar">
+  <div class="theme-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span fxHide="false" fxHide.gt-sm>
+        <button mat-button (click)="sidenavToggle()">
+          <mat-icon>menu</mat-icon>
+        </button> 
+      </span>
+      <app-contacts fxLayout="row" fxLayoutAlign="start center" fxShow="false" fxShow.gt-sm></app-contacts>         
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="">
+      <app-user-menu></app-user-menu>
+    </div>    
+  </div>           
+</mat-toolbar>  
+<mat-toolbar id="main-toolbar" class="mat-elevation-z2"> 
+  <div class="theme-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <a class="logo" routerLink="/" ><app-logo></app-logo></a> 
+    <div fxShow="false" fxShow.gt-sm class="horizontal-menu">            
+        <app-horizontal-menu [menuParentId]="0"></app-horizontal-menu>
+    </div> 
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <a routerLink="/login" mat-raised-button color="warn" fxShow="false" fxShow.gt-xs class="uppercase">Login</a>
+    </div>   
+  </div>     
+</mat-toolbar>

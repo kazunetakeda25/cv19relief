@@ -1,0 +1,84 @@
+<mat-chip-list>
+    <mat-chip *ngIf="searchFields?.offerType">
+        {{searchFields?.offerType.name}}        
+        <mat-icon color="warn" matChipRemove (click)="remove('offerType')">cancel</mat-icon>
+    </mat-chip> 
+    <mat-chip *ngIf="searchFields?.offerStatus && searchFields?.offerStatus.length > 0">
+        <span *ngFor="let type of searchFields?.offerStatus; let last = last;" class="mr-1">{{type.name}}<span *ngIf="!last">,</span></span>
+        <mat-icon color="warn" matChipRemove (click)="remove('offerStatus')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.price.from">
+        Price > {{searchFields?.price.from}}
+        <mat-icon color="warn" matChipRemove (click)="remove('price.from')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.price.to">
+        Price < {{searchFields?.price.to}}
+        <mat-icon color="warn" matChipRemove (click)="remove('price.to')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.city">
+        {{searchFields?.city.name}}
+        <mat-icon color="warn" matChipRemove (click)="remove('city')">cancel</mat-icon>
+    </mat-chip> 
+    <mat-chip *ngIf="searchFields?.zipCode">
+        {{searchFields?.zipCode}}
+        <mat-icon color="warn" matChipRemove (click)="remove('zipCode')">cancel</mat-icon>
+    </mat-chip>    
+    <mat-chip *ngIf="searchFields?.neighborhood && searchFields?.neighborhood.length > 0">
+        <span *ngFor="let item of searchFields?.neighborhood; let last = last;" class="mr-1">{{item.name}}<span *ngIf="!last">,</span></span>
+        <mat-icon color="warn" matChipRemove (click)="remove('neighborhood')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.street && searchFields?.street.length > 0">
+        <span *ngFor="let item of searchFields?.street; let last = last;" class="mr-1">{{item.name}}<span *ngIf="!last">,</span></span>
+        <mat-icon color="warn" matChipRemove (click)="remove('street')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.bedrooms.from">
+        Bedrooms > {{searchFields?.bedrooms.from}}
+        <mat-icon color="warn" matChipRemove (click)="remove('bedrooms.from')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.bedrooms.to">
+        Bedrooms < {{searchFields?.bedrooms.to}}
+        <mat-icon color="warn" matChipRemove (click)="remove('bedrooms.to')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.bathrooms.from">
+        Bathrooms > {{searchFields?.bathrooms.from}}
+        <mat-icon color="warn" matChipRemove (click)="remove('bathrooms.from')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.bathrooms.to">
+        Bathrooms < {{searchFields?.bathrooms.to}}
+        <mat-icon color="warn" matChipRemove (click)="remove('bathrooms.to')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.garages.from">
+        Garages > {{searchFields?.garages.from}}
+        <mat-icon color="warn" matChipRemove (click)="remove('garages.from')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.garages.to">
+        Garages < {{searchFields?.garages.to}}
+        <mat-icon color="warn" matChipRemove (click)="remove('garages.to')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.area.from">
+        Area > {{searchFields?.area.from}}
+        <mat-icon color="warn" matChipRemove (click)="remove('area.from')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.area.to">
+        Area < {{searchFields?.area.to}}
+        <mat-icon color="warn" matChipRemove (click)="remove('area.to')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.yearBuilt.from">
+        Year Built > {{searchFields?.yearBuilt.from}}
+        <mat-icon color="warn" matChipRemove (click)="remove('yearBuilt.from')">cancel</mat-icon>
+    </mat-chip>
+    <mat-chip *ngIf="searchFields?.yearBuilt.to">
+        Year Built < {{searchFields?.yearBuilt.to}}
+        <mat-icon color="warn" matChipRemove (click)="remove('yearBuilt.to')">cancel</mat-icon>
+    </mat-chip>
+
+    <span *ngIf="searchFields?.features"> 
+        <span *ngFor="let feature of searchFields?.features; index as i">
+            <mat-chip *ngIf="feature.selected">
+                {{feature.name}} 
+                <mat-icon color="warn" matChipRemove (click)="remove('features,'+i)">cancel</mat-icon>
+            </mat-chip>
+        </span>  
+    </span>
+
+</mat-chip-list>

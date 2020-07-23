@@ -1,0 +1,363 @@
+<mat-accordion [formGroup]="submitForm" class="edit-offer">
+
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>    
+    <mat-expansion-panel-header>
+      <mat-panel-title>Basic</mat-panel-title> 
+    </mat-expansion-panel-header>
+    <form formGroupName="basic" fxLayout="row wrap">
+
+        <div fxFlex="100" class="p-3">
+          <h1 class="fw-500 text-center">Basic</h1>
+        </div>
+                
+        <div fxFlex="100" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Title</mat-label>
+              <input matInput placeholder="Title" formControlName="title" required autocomplete="off">
+              <mat-error *ngIf="submitForm.get('basic')['controls'].title.errors?.required">Title is required</mat-error>
+          </mat-form-field>
+        </div>  
+    
+        <div fxFlex="100" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Description</mat-label> 
+              <textarea matInput placeholder="Description" formControlName="desc" rows="7"></textarea> 
+          </mat-form-field> 
+        </div> 
+    
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Price ($)</mat-label>
+              <input matInput placeholder="Enter sale or rent price" formControlName="priceDollar" autocomplete="off"> 
+          </mat-form-field>
+        </div> 
+    
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Price (€)</mat-label>
+              <input matInput placeholder="Enter sale or rent price" formControlName="priceEuro" autocomplete="off"> 
+          </mat-form-field>
+        </div> 
+    
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Offer Type</mat-label> 
+              <mat-select placeholder="Select Offer Type" formControlName="offerType" required>
+                  <mat-option *ngFor="let offerType of offerTypes" [value]="offerType">
+                      {{offerType.name}}
+                  </mat-option>
+              </mat-select>
+              <mat-error *ngIf="submitForm.get('basic')['controls'].offerType.errors?.required">Offer Type is required</mat-error>                               
+          </mat-form-field>
+        </div>
+    
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Offer Status</mat-label>
+              <mat-select placeholder="Select Offer Status" formControlName="offerStatus" multiple>
+                  <mat-option *ngFor="let offerStatus of offerStatuses" [value]="offerStatus">
+                      {{offerStatus.name}}
+                  </mat-option>
+              </mat-select>                             
+          </mat-form-field>
+        </div>
+    
+        <div fxFlex="100" class="step-section pb-2">
+            <p class="mb-0"><span class="uppercase fw-500">Gallery</span><span class="text-muted mx-3">(max 8 images)</span></p>  
+            <input-file formControlName="gallery" fileLimit="8" fileAccept="image/*" [linkEnabled]="true"></input-file>  
+        </div> 
+    
+        <div fxFlex="100" class="mt-3 p-2" fxLayoutAlign="end center">
+          <button mat-raised-button color="primary" fxLayout="row" fxLayoutAlign="center center" (click)="onSubmitForm('basic')" type="submit">
+            <span class="mx-1 uppercase">Next</span>                    
+            <mat-icon>navigate_next</mat-icon>
+          </button> 
+        </div> 
+    
+    </form> 
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle [disabled]="!submitForm.get('basic').valid">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Address</mat-panel-title> 
+    </mat-expansion-panel-header>
+    <form formGroupName="address" fxLayout="row wrap">
+            
+        <div fxFlex="100" class="p-3">
+          <h1 class="fw-500 text-center">Address</h1>
+        </div>
+                  
+        <div fxFlex="100" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-icon matPrefix class="mr-1 text-muted">location_on</mat-icon>
+              <mat-label>Location</mat-label>
+              <input matInput placeholder="Enter a location" formControlName="location" autocomplete="off" #addressAutocomplete> 
+              <button *ngIf="submitForm.get('address')['controls'].location.value" mat-button matSuffix mat-icon-button (click)="submitForm.get('address')['controls'].location.setValue(null)" type="button">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-error *ngIf="submitForm.get('address')['controls'].location.errors?.required">Location is required</mat-error>   
+          </mat-form-field>
+        </div> 
+      
+        <div fxFlex="100" class="px-2 mb-4">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeControl]="true" [fullscreenControl]="true" (mapClick)="onMapClick($event)">
+                <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (markerClick)="onMarkerClick($event)"></agm-marker>
+            </agm-map>
+        </div>
+      
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>City</mat-label>
+              <mat-select placeholder="Select City..." formControlName="city" (selectionChange)="onSelectCity()" required> 
+                <mat-option *ngFor="let city of cities" [value]="city">
+                  {{city.name}}
+                </mat-option>
+              </mat-select> 
+              <mat-error *ngIf="submitForm.get('address')['controls'].city.errors?.required">City is required</mat-error>                    
+          </mat-form-field>
+        </div> 
+      
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Zip Code</mat-label>
+              <input matInput placeholder="exp. 98104" autocomplete="off" formControlName="zipCode">                  
+            </mat-form-field>
+        </div>
+      
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Neighborhood</mat-label>
+            <mat-select placeholder="Select Neighborhood..." formControlName="neighborhood" multiple (selectionChange)="onSelectNeighborhood()">
+              <mat-option *ngFor="let neighborhood of neighborhoods | filterNeighborhoods: submitForm.get('address')['controls'].city.value?.id" [value]="neighborhood">
+                {{neighborhood.name}}
+              </mat-option>
+            </mat-select>   
+          </mat-form-field>
+        </div> 
+      
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Street</mat-label>
+            <mat-select placeholder="Select Street..." formControlName="street" multiple> 
+              <mat-option *ngFor="let street of streets | filterStreets : { neighborhoods: submitForm.get('address')['controls'].neighborhood.value?.id, cityId:submitForm.get('address')['controls'].city.value?.id } " [value]="street">
+                {{street.name}}
+              </mat-option>
+            </mat-select>  
+          </mat-form-field>
+        </div> 
+      
+        <div fxFlex="100" class="mt-3 p-2" fxLayoutAlign="space-between center">
+          <button mat-raised-button color="primary" fxLayout="row" fxLayoutAlign="center center" (click)="prevStep()" type="button">
+            <mat-icon>navigate_before</mat-icon>
+            <span class="mx-1 uppercase">Back</span>  
+          </button>
+          <button mat-raised-button color="primary" fxLayout="row" fxLayoutAlign="center center" (click)="onSubmitForm('address')" type="submit">
+            <span class="mx-1 uppercase">Next</span>                    
+            <mat-icon>navigate_next</mat-icon>
+          </button> 
+        </div>  
+      
+    </form>    
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle [disabled]="!submitForm.get('basic').valid || !submitForm.get('address').valid">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Additional</mat-panel-title> 
+    </mat-expansion-panel-header>
+    <form formGroupName="additional" fxLayout="row wrap">
+    
+        <div fxFlex="100" class="p-3">
+          <h1 class="fw-500 text-center">Additional</h1>
+        </div>
+    
+        <div fxFlex="100" fxFlex.gt-xs="33.3" class="px-2">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Bedrooms</mat-label>
+              <input matInput placeholder="bedrooms" autocomplete="off" formControlName="bedrooms" onlyNumber maxlength="2">                  
+            </mat-form-field>
+        </div>
+    
+        <div fxFlex="100" fxFlex.gt-xs="33.3" class="px-2">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Bathrooms</mat-label>
+              <input matInput placeholder="bathrooms" autocomplete="off" formControlName="bathrooms" onlyNumber maxlength="2">                  
+            </mat-form-field>
+        </div>
+    
+        <div fxFlex="100" fxFlex.gt-xs="33.3" class="px-2">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Garages</mat-label>
+              <input matInput placeholder="Garages" autocomplete="off" formControlName="garages" onlyNumber maxlength="2">                  
+            </mat-form-field>
+        </div>
+        
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Area (ft²)</mat-label>
+              <input matInput placeholder="Area" autocomplete="off" formControlName="area" onlyNumber>                  
+            </mat-form-field>
+        </div>
+        
+        <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Year Built</mat-label>
+              <input matInput placeholder="Year Built" autocomplete="off" formControlName="yearBuilt" onlyNumber  maxlength="4">                  
+            </mat-form-field>
+        </div>
+    
+        <div fxFlex="100" class="mb-2"> 
+            <p class="uppercase m-2 fw-500">Features</p> 
+            <div formArrayName="features" fxLayout="row wrap">
+                <div [formGroupName]="i" *ngFor="let control of submitForm.get('additional')['controls'].features['controls']; index as i" class="p-2">
+                    <mat-checkbox formControlName="selected">{{features[i].name}}</mat-checkbox>                         
+                </div>
+            </div>
+        </div>
+    
+
+        <div fxFlex="100" class="mt-3 p-2" fxLayoutAlign="space-between center">
+          <button mat-raised-button color="primary" fxLayout="row" fxLayoutAlign="center center" (click)="prevStep()" type="button">
+            <mat-icon>navigate_before</mat-icon>
+            <span class="mx-1 uppercase">Back</span>  
+          </button>
+          <button mat-raised-button color="primary" fxLayout="row" fxLayoutAlign="center center" (click)="onSubmitForm('additional')" type="submit">
+            <span class="mx-1 uppercase">Next</span>                    
+            <mat-icon>navigate_next</mat-icon>
+          </button> 
+        </div>  
+    
+        
+    
+    
+    </form>
+  </mat-expansion-panel> 
+
+  <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle [disabled]="!submitForm.get('basic').valid || !submitForm.get('address').valid || !submitForm.get('additional').valid ">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Media</mat-panel-title> 
+    </mat-expansion-panel-header>
+    <form formGroupName="media" fxLayout="row wrap">    
+                  
+        <div fxFlex="100" class="p-3">
+          <h1 class="fw-500 text-center">Media</h1>
+        </div>
+    
+        <div fxFlex="100" fxLayoutAlign="start center" class="my-3 px-2"> 
+            <p class="mb-0"><span class="uppercase fw-500">Videos</span><span class="text-muted mx-3">(video link to .mp4)</span></p>                            
+            <button type="button" mat-icon-button color="primary" (click)="addVideo()" matTooltip="Add New Video" matTooltipPosition="after">
+                <mat-icon>add_circle</mat-icon>
+            </button>
+        </div> 
+        <div formArrayName="videos" fxFlex="100" fxLayout="row wrap">  
+            <div *ngFor="let item of submitForm.get('media')['controls'].videos['controls']; let i = index;" fxFlex="100" class="step-section">
+                <div fxFlex="4" class="fw-500 text-center pt-3">{{i+1}}.</div>
+                <div [formGroupName]="i" fxFlex="90" fxLayout="row wrap">
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="40" class="px-2">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Video name" formControlName="name" autocomplete="off">     
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="60" class="px-2">
+                        <mat-label>Link</mat-label>
+                        <input matInput placeholder="Link to video" formControlName="link" autocomplete="off">     
+                    </mat-form-field>                                                 
+                </div>
+                <div fxFlex="6" class="text-center pt-2">
+                    <button mat-icon-button color="warn" (click)="deleteVideo(i)" matTooltip="Delete Video">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </div>                            
+            </div>        
+        </div>
+    
+        <div fxFlex="100" fxLayoutAlign="start center" class="my-3 px-2"> 
+            <p class="uppercase fw-500 mb-0">Plans</p>                            
+            <button type="button" mat-icon-button color="primary" (click)="addPlan()" matTooltip="Add New Plan" matTooltipPosition="after" class="mx-3">
+                <mat-icon>add_circle</mat-icon>
+            </button>
+        </div> 
+        <div formArrayName="plans" fxFlex="100" fxLayout="row wrap">  
+            <div *ngFor="let item of submitForm.get('media')['controls'].plans['controls']; let i = index;" fxFlex="100" class="step-section pb-2">
+                <div fxFlex="4" class="fw-500 text-center pt-3">{{i+1}}.</div>
+                <div [formGroupName]="i" fxFlex="90" fxLayout="row wrap">
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="40" class="px-2">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Plan name" formControlName="name" autocomplete="off">     
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="60" class="px-2">
+                        <mat-label>Desc</mat-label>
+                        <input matInput placeholder="Description" formControlName="desc" autocomplete="off">     
+                    </mat-form-field> 
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="33.3" class="px-2">
+                        <mat-label>Area (ft²)</mat-label>
+                        <input matInput placeholder="Area" formControlName="area" autocomplete="off" onlyNumber>     
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="33.3" class="px-2">
+                        <mat-label>Rooms</mat-label>
+                        <input matInput placeholder="Rooms" formControlName="rooms" autocomplete="off" onlyNumber>     
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="33.3" class="px-2">
+                        <mat-label>Baths</mat-label>
+                        <input matInput placeholder="Baths" formControlName="baths" autocomplete="off" onlyNumber>     
+                    </mat-form-field>
+                    <div fxFlex="100" class="px-2">  
+                        <input-file placeholder="Image (or link to image)" formControlName="image" fileLimit="1" fileAccept="image/*" [linkEnabled]="true"></input-file>  
+                    </div>                
+                </div>
+                <div fxFlex="6" class="text-center pt-2">
+                    <button mat-icon-button color="warn" (click)="deletePlan(i)" matTooltip="Delete Plan">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </div>  
+            </div>        
+        </div> 
+    
+        
+        <div fxFlex="100" fxLayoutAlign="start center" class="my-3 px-2"> 
+            <p class="mb-0 uppercase fw-500">Additional features</p>                            
+            <button type="button" mat-icon-button color="primary" (click)="addFeature()" matTooltip="Add New Feature" matTooltipPosition="after">
+                <mat-icon>add_circle</mat-icon>
+            </button>
+        </div> 
+        <div formArrayName="additionalFeatures" fxFlex="100" fxLayout="row wrap">  
+            <div *ngFor="let item of submitForm.get('media')['controls'].additionalFeatures['controls']; let i = index;" fxFlex="100" class="step-section">
+                <div fxFlex="4" class="fw-500 text-center pt-3">{{i+1}}.</div>
+                <div [formGroupName]="i" fxFlex="90" fxLayout="row wrap">
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="40" class="px-2">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Feature name" formControlName="name" autocomplete="off">     
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-xs="60" class="px-2">
+                        <mat-label>Value</mat-label>
+                        <input matInput placeholder="Feature value" formControlName="value" autocomplete="off">     
+                    </mat-form-field>                                                 
+                </div>
+                <div fxFlex="6" class="text-center pt-2">
+                    <button mat-icon-button color="warn" (click)="deleteFeature(i)" matTooltip="Delete Feature">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </div>                            
+            </div>        
+        </div>    
+    
+        <div fxFlex="100" class="py-3">
+            <mat-slide-toggle formControlName="featured">Featured</mat-slide-toggle>
+        </div>
+
+        <div fxFlex="100" class="mt-3 p-2" fxLayoutAlign="space-between center">
+          <button mat-raised-button color="primary" fxLayout="row" fxLayoutAlign="center center" (click)="prevStep()" type="button">
+            <mat-icon>navigate_before</mat-icon>
+            <span class="mx-1 uppercase">Back</span>  
+          </button>
+          <button mat-raised-button color="primary" fxLayout="row" fxLayoutAlign="center center" (click)="onSubmitForm('media')" type="submit">
+            <span class="mx-1 uppercase">Update</span>
+          </button> 
+        </div>
+    
+    </form>
+  </mat-expansion-panel> 
+
+</mat-accordion> 
+
+<div *ngIf="step === 4" fxLayout="row" fxLayoutAlign="center center" class="pt-3">  
+  <a routerLink="/account/my-offers" mat-raised-button color="accent">Return to my offers</a>       
+</div> 

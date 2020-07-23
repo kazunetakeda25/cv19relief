@@ -1,0 +1,270 @@
+[
+    {
+        "id": 2,
+        "title": "Centrally located office", 
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+        "offerType": "Office",
+        "offerStatus": ["For Rent", "No Fees"],
+        "city": "Los Angeles",
+        "zipCode": "90044",
+        "neighborhood": ["Hollywood", "Highland Park"],
+        "street": ["Hollywood Street #2", "Highland Park Street #1"],
+        "location" : {
+            "lat": 33.954220,
+            "lng": -118.293730
+        },
+        "formattedAddress" : "1052 W 91st St, Los Angeles, CA 90044, USA",
+        "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Refrigerator", "Fireplace", "Sauna", "TV Cable", "WiFi"], 
+        "featured": true,
+        "priceDollar": {
+            "sale": null,
+            "rent": 6500
+        },
+        "priceEuro": {
+            "sale": null,
+            "rent": 5800
+        },
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "garages": 2,
+        "area": {
+            "value": 1500,
+            "unit": "ft²"
+        },
+        "yearBuilt": 2012,
+        "ratingsCount": 4,
+        "ratingsValue": 400,
+        "additionalFeatures": [                
+            {
+                "name": "Heat",
+                "value": "Natural Gas"
+            },
+            {
+                "name": "Roof",
+                "value": "Composition/Shingle"
+            },
+            {
+                "name": "Floors",
+                "value": "Wall-to-Wall Carpet"
+            },
+            {
+                "name": "Water",
+                "value": "District/Public"
+            },
+            {
+                "name": "Cross Streets",
+                "value": "Orangethorpe-Gilbert"
+            },
+            {
+                "name": "Windows",
+                "value": "Skylights"
+            },
+            {
+                "name": "Flat",
+                "value": "5"
+            },
+            {
+                "name": "Childroom",
+                "value": "2"
+            }
+        ],
+        "gallery": [
+            {
+                "small": "assets/images/props/office/1-small.jpg",
+                "medium": "assets/images/props/office/1-medium.jpg",
+                "big": "assets/images/props/office/1-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/2-small.jpg",
+                "medium": "assets/images/props/office/2-medium.jpg",
+                "big": "assets/images/props/office/2-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/3-small.jpg",
+                "medium": "assets/images/props/office/3-medium.jpg",
+                "big": "assets/images/props/office/3-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/4-small.jpg",
+                "medium": "assets/images/props/office/4-medium.jpg",
+                "big": "assets/images/props/office/4-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/5-small.jpg",
+                "medium": "assets/images/props/office/5-medium.jpg",
+                "big": "assets/images/props/office/5-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/6-small.jpg",
+                "medium": "assets/images/props/office/6-medium.jpg",
+                "big": "assets/images/props/office/6-big.jpg"
+            }
+        ],
+        "plans": [
+            {
+                "name": "First floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1180,
+                    "unit": "ft²"
+                },
+                "rooms": 3,
+                "baths": 1,
+                "image": "assets/images/others/plan-1.jpg"
+            },
+            {
+                "name": "Second floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1200,
+                    "unit": "ft²"
+                },
+                "rooms": 5,
+                "baths": 2,
+                "image": "assets/images/others/plan-2.jpg"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Video with 'mat-video' plugin",
+                "link": "http://themeseason.com/data/videos/video-1.mp4"
+            },
+            {
+                "name": "Video with 'ngx-embed-video' plugin",
+                "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+            }
+        ],
+        "published": "2013-09-12 12:20:30",
+        "lastUpdate": "2019-05-20 14:20:00",
+        "views": 408
+    },
+    {
+        "id": 5,
+        "title": "House with a pool", 
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+        "offerType": "House",
+        "offerStatus": ["Sold", "For Sale"],
+        "city": "Seattle",
+        "zipCode": "98108",
+        "neighborhood": ["Queen Anne", "Belltown"],
+        "street": ["Queen Anne Street #1", "Belltown Street #2"],
+        "location" : {
+            "lat": 47.603230,
+            "lng": -122.330276
+        },
+        "formattedAddress": "5921 17th Ave S, Seattle, WA 98108, USA", 
+        "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Gym", "Swimming Pool", "Sauna", "TV Cable", "WiFi"],
+        "featured": true, 
+        "priceDollar": {
+            "sale": 4500000,
+            "rent": null
+        },
+        "priceEuro": {
+            "sale": 4020000,
+            "rent": null
+        },
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "garages": 1,
+        "area": {
+            "value": 2200,
+            "unit": "ft²"
+        },
+        "yearBuilt": 2007,
+        "ratingsCount": 6,
+        "ratingsValue": 480,
+        "additionalFeatures": [                
+            {
+                "name": "Heat",
+                "value": "Natural Gas"
+            },
+            {
+                "name": "Roof",
+                "value": "Composition/Shingle"
+            },
+            {
+                "name": "Floors",
+                "value": "Wall-to-Wall Carpet"
+            },
+            {
+                "name": "Water",
+                "value": "District/Public"
+            },
+            {
+                "name": "Cross Streets",
+                "value": "Orangethorpe-Gilbert"
+            },
+            {
+                "name": "Windows",
+                "value": "Skylights"
+            },
+            {
+                "name": "Flat",
+                "value": "5"
+            },
+            {
+                "name": "Childroom",
+                "value": "2"
+            }
+        ],
+        "gallery": [
+            {
+                "small": "assets/images/props/house-3/1-small.jpg",
+                "medium": "assets/images/props/house-3/1-medium.jpg",
+                "big": "assets/images/props/house-3/1-big.jpg"
+            },
+            {
+                "small": "assets/images/props/house-3/2-small.jpg",
+                "medium": "assets/images/props/house-3/2-medium.jpg",
+                "big": "assets/images/props/house-3/2-big.jpg"
+            },
+            {
+                "small": "assets/images/props/house-3/3-small.jpg",
+                "medium": "assets/images/props/house-3/3-medium.jpg",
+                "big": "assets/images/props/house-3/3-big.jpg"
+            },
+            {
+                "small": "assets/images/props/house-3/4-small.jpg",
+                "medium": "assets/images/props/house-3/4-medium.jpg",
+                "big": "assets/images/props/house-3/4-big.jpg"
+            }
+        ],
+        "plans": [
+            {
+                "name": "First floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1180,
+                    "unit": "ft²"
+                },
+                "rooms": 3,
+                "baths": 1,
+                "image": "assets/images/others/plan-1.jpg"
+            },
+            {
+                "name": "Second floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1200,
+                    "unit": "ft²"
+                },
+                "rooms": 5,
+                "baths": 2,
+                "image": "assets/images/others/plan-2.jpg"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Video with 'mat-video' plugin",
+                "link": "http://themeseason.com/data/videos/video-1.mp4"
+            },
+            {
+                "name": "Video with 'ngx-embed-video' plugin",
+                "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+            }
+        ],
+        "published": "2017-11-20 10:20:00",
+        "lastUpdate": "2019-04-14 14:20:00",
+        "views": 633
+    } 
+]

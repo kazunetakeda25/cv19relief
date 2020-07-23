@@ -1,0 +1,10 @@
+<a mat-button [matMenuTriggerFor]="currencyMenu" #currencyMenuTrigger="matMenuTrigger">
+    <span>{{currency}}</span><mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+</a>
+<mat-menu #currencyMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-menu-panel">
+    <span (mouseleave)="currencyMenuTrigger.closeMenu()">
+        <button mat-menu-item *ngFor="let cur of currencies" (click)="changeCurrency(cur)">
+            <span>{{cur}}</span>
+        </button>
+    </span>
+</mat-menu>

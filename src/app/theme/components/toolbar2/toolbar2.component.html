@@ -1,0 +1,46 @@
+<mat-toolbar id="top-toolbar" class="top-toolbar">
+  <mat-toolbar-row  ngClass.xs="p-0">
+    <div class="theme-container" fxLayout="row" fxLayoutAlign="center" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.sm="space-between center">
+      <app-social-icons [iconSize]="'lg'" [iconColor]="'primary'" fxLayout="row" fxLayoutAlign="start center" fxHide="false" fxHide.gt-sm fxHide.xs></app-social-icons>
+      <div fxLayout="row" fxLayoutAlign="start center" fxShow="false" fxShow.xs class="bg-primary right-section px-2">
+        <app-social-icons fxLayout="row" fxLayoutAlign="start center"></app-social-icons>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" class="bg-primary right-section" ngClass.xs="w-100">
+          <app-currency></app-currency>
+          <app-lang></app-lang>
+          <app-user-menu></app-user-menu>
+      </div>    
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row ngClass.xs="py-3">
+    <div class="theme-container" fxLayout="row" fxLayoutAlign="center" fxLayoutAlign.gt-sm="space-between center">
+      <a class="logo" routerLink="/" ><app-logo></app-logo></a> 
+      <app-contacts [dividers]="false" [iconColor]="'primary'" [iconSize]="'lg'" fxLayout="row" fxLayoutAlign="start center" fxShow="false" fxShow.gt-sm></app-contacts>   
+      <app-social-icons [iconSize]="'lg'" [iconColor]="'primary'" fxLayout="row" fxLayoutAlign="end center" fxShow="false" fxShow.gt-sm></app-social-icons>
+    </div> 
+  </mat-toolbar-row>              
+</mat-toolbar>
+<mat-toolbar id="main-toolbar" class="mat-elevation-z2"> 
+  <div class="theme-container" fxLayout="row" fxLayoutAlign="space-between center">    
+    <mat-icon class="mat-icon-xlg" fxHide="false" fxHide.gt-sm (click)="sidenavToggle()">menu</mat-icon>
+    <div fxShow="false" fxShow.gt-sm class="horizontal-menu">            
+        <app-horizontal-menu [menuParentId]="0"></app-horizontal-menu>
+    </div>     
+    <div>
+      <a routerLink="/account/favorites" mat-icon-button matTooltip="Favorites" fxShow="false" fxShow.gt-md>
+        <mat-icon [matBadge]="appService.Data.favorites.length" 
+                  [matBadgeHidden]="appService.Data.favorites.length == 0" 
+                  matBadgeSize="small" 
+                  matBadgeColor="warn">favorite_border</mat-icon>
+      </a>
+      <a routerLink="/compare" mat-icon-button matTooltip="Compare list" fxShow="false" fxShow.gt-md class="mr-3 ml-2">
+        <mat-icon [matBadge]="appService.Data.compareList.length" 
+                  [matBadgeHidden]="appService.Data.compareList.length == 0" 
+                  matBadgeSize="small" 
+                  matBadgeColor="warn">compare_arrows</mat-icon>
+      </a>
+      <a routerLink="/submit-offer" mat-mini-fab color="accent" fxHide="false" fxHide.gt-xs><mat-icon>add</mat-icon></a>
+      <a routerLink="/submit-offer" mat-raised-button color="accent" fxShow="false" fxShow.gt-xs class="uppercase">submit offer</a>
+    </div>  
+  </div>     
+</mat-toolbar>

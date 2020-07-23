@@ -1,0 +1,33 @@
+<div class="header-carousel" [class.offset-bottom]="contentOffsetToTop">
+    <div *ngIf="slides.length > 1"  class="swiper-container h-100" [swiper]="config" (indexChange)="onIndexChange($event)">
+        <div class="swiper-wrapper h-100">      
+            <div *ngFor="let slide of slides;" class="swiper-slide">
+                <div [attr.data-background]="slide.image" class="slide-item swiper-lazy">
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+            </div>
+        </div>     
+        <button mat-mini-fab color="primary" class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button mat-mini-fab color="primary" class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
+      
+        <div fxLayout="column" fxLayoutAlign="center center" class="slide-info" [dir]="(settings.rtl) ? 'rtl' : 'ltr'">
+            <mat-card class="p-4">
+                <h1 class="slide-title">{{currentSlide.title}}</h1>
+                <p class="location" fxLayout="row" fxLayoutAlign="center center">
+                    <mat-icon color="primary" ngClass.gt-sm="mat-icon-lg">location_on</mat-icon>
+                    <span class="px-1">{{currentSlide.location}}</span>
+                </p> 
+                <button mat-raised-button color="primary" class="price">                        
+                    <span *ngIf="settings.currency == 'USD'" class="price">
+                        <span *ngIf="currentSlide.priceDollar.sale">{{currentSlide.priceDollar.sale | currency : 'USD' : 'symbol' : '1.0'}}</span>
+                        <span *ngIf="currentSlide.priceDollar.rent">{{currentSlide.priceDollar.rent | currency : 'USD' : 'symbol' : '1.0'}} /month</span>
+                    </span>
+                    <span *ngIf="settings.currency == 'EUR'" class="price">
+                        <span *ngIf="currentSlide.priceEuro.sale">{{currentSlide.priceEuro.sale | currency : 'EUR' : 'symbol' : '1.0'}}</span>
+                        <span *ngIf="currentSlide.priceEuro.rent">{{currentSlide.priceEuro.rent | currency : 'EUR' : 'symbol' : '1.0'}} /month</span>
+                    </span>
+                </button>                  
+            </mat-card>  
+        </div> 
+    </div>
+</div>

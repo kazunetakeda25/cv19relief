@@ -1,0 +1,543 @@
+[
+    {
+        "id": 1,
+        "title": "Modern and quirky flat", 
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+        "offerType": "Apartment",
+        "offerStatus": ["For Sale"],
+        "city": "New York",
+        "zipCode": "10033",
+        "neighborhood": ["Astoria", "Midtown"],
+        "street": ["Astoria Street #1", "Midtown Street #2"],
+        "location" : {
+            "lat": 40.849150,
+            "lng": -73.935100
+        },
+        "formattedAddress" : "611 W 180th St, New York, NY 10033, USA",
+        "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Refrigerator", "Fireplace", "Swimming Pool", "TV Cable", "WiFi"],
+        "featured": false, 
+        "priceDollar": {
+            "sale": 1300000,
+            "rent": null
+        },
+        "priceEuro": {
+            "sale": 1160000,
+            "rent": null
+        },
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "garages": 1,
+        "area": {
+            "value": 2380,
+            "unit": "ft²"
+        },
+        "yearBuilt": 2007,
+        "ratingsCount": 3,
+        "ratingsValue": 280,
+        "additionalFeatures": [                
+            {
+                "name": "Heat",
+                "value": "Natural Gas"
+            },
+            {
+                "name": "Roof",
+                "value": "Composition/Shingle"
+            },
+            {
+                "name": "Floors",
+                "value": "Wall-to-Wall Carpet"
+            },
+            {
+                "name": "Water",
+                "value": "District/Public"
+            },
+            {
+                "name": "Cross Streets",
+                "value": "Orangethorpe-Gilbert"
+            },
+            {
+                "name": "Windows",
+                "value": "Skylights"
+            },
+            {
+                "name": "Flat",
+                "value": "5"
+            },
+            {
+                "name": "Childroom",
+                "value": "2"
+            }
+        ],
+        "gallery": [         
+            {
+                "small": "assets/images/props/flat-1/1-small.jpg",
+                "medium": "assets/images/props/flat-1/1-medium.jpg",
+                "big": "assets/images/props/flat-1/1-big.jpg"
+            },
+            {
+                "small": "assets/images/props/flat-1/2-small.jpg",
+                "medium": "assets/images/props/flat-1/2-medium.jpg",
+                "big": "assets/images/props/flat-1/2-big.jpg"
+            },
+            {
+                "small": "assets/images/props/flat-1/3-small.jpg",
+                "medium": "assets/images/props/flat-1/3-medium.jpg",
+                "big": "assets/images/props/flat-1/3-big.jpg"
+            },
+            {
+                "small": "assets/images/props/flat-1/4-small.jpg",
+                "medium": "assets/images/props/flat-1/4-medium.jpg",
+                "big": "assets/images/props/flat-1/4-big.jpg"
+            }
+        ],
+        "plans": [
+            {
+                "name": "First floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1180,
+                    "unit": "ft²"
+                },
+                "rooms": 3,
+                "baths": 1,
+                "image": "assets/images/others/plan-1.jpg"
+            },
+            {
+                "name": "Second floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1200,
+                    "unit": "ft²"
+                },
+                "rooms": 5,
+                "baths": 2,
+                "image": "assets/images/others/plan-2.jpg"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Video with 'mat-video' plugin",
+                "link": "http://themeseason.com/data/videos/video-1.mp4"
+            },
+            {
+                "name": "Video with 'ngx-embed-video' plugin",
+                "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+            }
+        ],
+        "published": "2012-08-12 17:17:30",
+        "lastUpdate": "2019-05-20 14:20:00",
+        "views": 322
+    },
+    {
+        "id": 2,
+        "title": "Centrally located office", 
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+        "offerType": "Office",
+        "offerStatus": ["For Rent", "No Fees"],
+        "city": "Los Angeles",
+        "zipCode": "90044",
+        "neighborhood": ["Hollywood", "Highland Park"],
+        "street": ["Hollywood Street #2", "Highland Park Street #1"],
+        "location" : {
+            "lat": 33.954220,
+            "lng": -118.293730
+        },
+        "formattedAddress" : "1052 W 91st St, Los Angeles, CA 90044, USA",
+        "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Refrigerator", "Fireplace", "Sauna", "TV Cable", "WiFi"], 
+        "featured": true,
+        "priceDollar": {
+            "sale": null,
+            "rent": 6500
+        },
+        "priceEuro": {
+            "sale": null,
+            "rent": 5800
+        },
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "garages": 2,
+        "area": {
+            "value": 1500,
+            "unit": "ft²"
+        },
+        "yearBuilt": 2012,
+        "ratingsCount": 4,
+        "ratingsValue": 400,
+        "additionalFeatures": [                
+            {
+                "name": "Heat",
+                "value": "Natural Gas"
+            },
+            {
+                "name": "Roof",
+                "value": "Composition/Shingle"
+            },
+            {
+                "name": "Floors",
+                "value": "Wall-to-Wall Carpet"
+            },
+            {
+                "name": "Water",
+                "value": "District/Public"
+            },
+            {
+                "name": "Cross Streets",
+                "value": "Orangethorpe-Gilbert"
+            },
+            {
+                "name": "Windows",
+                "value": "Skylights"
+            },
+            {
+                "name": "Flat",
+                "value": "5"
+            },
+            {
+                "name": "Childroom",
+                "value": "2"
+            }
+        ],
+        "gallery": [
+            {
+                "small": "assets/images/props/office/1-small.jpg",
+                "medium": "assets/images/props/office/1-medium.jpg",
+                "big": "assets/images/props/office/1-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/2-small.jpg",
+                "medium": "assets/images/props/office/2-medium.jpg",
+                "big": "assets/images/props/office/2-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/3-small.jpg",
+                "medium": "assets/images/props/office/3-medium.jpg",
+                "big": "assets/images/props/office/3-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/4-small.jpg",
+                "medium": "assets/images/props/office/4-medium.jpg",
+                "big": "assets/images/props/office/4-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/5-small.jpg",
+                "medium": "assets/images/props/office/5-medium.jpg",
+                "big": "assets/images/props/office/5-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office/6-small.jpg",
+                "medium": "assets/images/props/office/6-medium.jpg",
+                "big": "assets/images/props/office/6-big.jpg"
+            }
+        ],
+        "plans": [
+            {
+                "name": "First floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1180,
+                    "unit": "ft²"
+                },
+                "rooms": 3,
+                "baths": 1,
+                "image": "assets/images/others/plan-1.jpg"
+            },
+            {
+                "name": "Second floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1200,
+                    "unit": "ft²"
+                },
+                "rooms": 5,
+                "baths": 2,
+                "image": "assets/images/others/plan-2.jpg"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Video with 'mat-video' plugin",
+                "link": "http://themeseason.com/data/videos/video-1.mp4"
+            },
+            {
+                "name": "Video with 'ngx-embed-video' plugin",
+                "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+            }
+        ],
+        "published": "2013-09-12 12:20:30",
+        "lastUpdate": "2019-05-20 14:20:00",
+        "views": 408
+    }, 
+    {
+        "id": 7,
+        "title": "Luxury office space", 
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+        "offerType": "Office",
+        "offerStatus": ["For Sale", "Hot Offer"],
+        "city": "New York",
+        "zipCode": "10019",
+        "neighborhood": ["Englewood", "Austin"],
+        "street": ["Englewood Street #2", "Austin Street #2"],
+        "location" : {
+            "lat": 40.716761,
+            "lng": -73.999958
+        },
+        "formattedAddress": "230 W 55th St, New York, NY 10019, USA", 
+        "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Gym", "Swimming Pool", "Sauna", "TV Cable", "WiFi"],
+        "featured": false, 
+        "priceDollar": {
+            "sale": 2500000,
+            "rent": null
+        },
+        "priceEuro": {
+            "sale": 2200000,
+            "rent": null
+        },
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "garages": 1,
+        "area": {
+            "value": 3200,
+            "unit": "ft²"
+        },
+        "yearBuilt": 2017,
+        "ratingsCount": 7,
+        "ratingsValue": 700,
+        "additionalFeatures": [                
+            {
+                "name": "Heat",
+                "value": "Natural Gas"
+            },
+            {
+                "name": "Roof",
+                "value": "Composition/Shingle"
+            },
+            {
+                "name": "Floors",
+                "value": "Wall-to-Wall Carpet"
+            },
+            {
+                "name": "Water",
+                "value": "District/Public"
+            },
+            {
+                "name": "Cross Streets",
+                "value": "Orangethorpe-Gilbert"
+            },
+            {
+                "name": "Windows",
+                "value": "Skylights"
+            },
+            {
+                "name": "Flat",
+                "value": "5"
+            },
+            {
+                "name": "Childroom",
+                "value": "2"
+            }
+        ],
+        "gallery": [
+            {
+                "small": "assets/images/props/office-2/1-small.jpg",
+                "medium": "assets/images/props/office-2/1-medium.jpg",
+                "big": "assets/images/props/office-2/1-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office-2/2-small.jpg",
+                "medium": "assets/images/props/office-2/2-medium.jpg",
+                "big": "assets/images/props/office-2/2-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office-2/3-small.jpg",
+                "medium": "assets/images/props/office-2/3-medium.jpg",
+                "big": "assets/images/props/office-2/3-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office-2/4-small.jpg",
+                "medium": "assets/images/props/office-2/4-medium.jpg",
+                "big": "assets/images/props/office-2/4-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office-2/5-small.jpg",
+                "medium": "assets/images/props/office-2/5-medium.jpg",
+                "big": "assets/images/props/office-2/5-big.jpg"
+            },
+            {
+                "small": "assets/images/props/office-2/6-small.jpg",
+                "medium": "assets/images/props/office-2/6-medium.jpg",
+                "big": "assets/images/props/office-2/6-big.jpg"
+            }
+        ],
+        "plans": [
+            {
+                "name": "First floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1180,
+                    "unit": "ft²"
+                },
+                "rooms": 3,
+                "baths": 1,
+                "image": "assets/images/others/plan-1.jpg"
+            },
+            {
+                "name": "Second floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1200,
+                    "unit": "ft²"
+                },
+                "rooms": 5,
+                "baths": 2,
+                "image": "assets/images/others/plan-2.jpg"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Video with 'mat-video' plugin",
+                "link": "http://themeseason.com/data/videos/video-1.mp4"
+            },
+            {
+                "name": "Video with 'ngx-embed-video' plugin",
+                "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+            }
+        ],
+        "published": "2017-08-12 18:20:00",
+        "lastUpdate": "2019-03-29 14:20:00",
+        "views": 470
+    },
+    {
+        "id": 8,
+        "title": "Centrally located apartment", 
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+        "offerType": "Apartment",
+        "offerStatus": ["For Rent", "No Fees"],
+        "city": "Los Angeles",
+        "zipCode": "90028",
+        "neighborhood": ["Englewood", "Austin"],
+        "street": ["Englewood Street #2", "Austin Street #2"],
+        "location" : {
+            "lat": 34.100570,
+            "lng": -118.327440
+        },
+        "formattedAddress": "1627 Vine St, Los Angeles, CA 90028, USA", 
+        "features": ["Air Conditioning", "Refrigerator", "Dryer", "Microwave", "Gym", "Swimming Pool", "Sauna", "TV Cable", "WiFi"],
+        "featured": true, 
+        "priceDollar": {
+            "sale": null,
+            "rent": 5600
+        },
+        "priceEuro": {
+            "sale": null,
+            "rent": 5000
+        },
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "garages": 1,
+        "area": {
+            "value": 1600,
+            "unit": "ft²"
+        },
+        "yearBuilt": 2017,
+        "ratingsCount": 4,
+        "ratingsValue": 380,
+        "additionalFeatures": [                
+            {
+                "name": "Heat",
+                "value": "Natural Gas"
+            },
+            {
+                "name": "Roof",
+                "value": "Composition/Shingle"
+            },
+            {
+                "name": "Floors",
+                "value": "Wall-to-Wall Carpet"
+            },
+            {
+                "name": "Water",
+                "value": "District/Public"
+            },
+            {
+                "name": "Cross Streets",
+                "value": "Orangethorpe-Gilbert"
+            },
+            {
+                "name": "Windows",
+                "value": "Skylights"
+            },
+            {
+                "name": "Flat",
+                "value": "5"
+            },
+            {
+                "name": "Childroom",
+                "value": "2"
+            }
+        ],
+        "gallery": [
+            {
+                "small": "assets/images/props/apartment/1-small.jpg",
+                "medium": "assets/images/props/apartment/1-medium.jpg",
+                "big": "assets/images/props/apartment/1-big.jpg"
+            },
+            {
+                "small": "assets/images/props/apartment/2-small.jpg",
+                "medium": "assets/images/props/apartment/2-medium.jpg",
+                "big": "assets/images/props/apartment/2-big.jpg"
+            },
+            {
+                "small": "assets/images/props/apartment/3-small.jpg",
+                "medium": "assets/images/props/apartment/3-medium.jpg",
+                "big": "assets/images/props/apartment/3-big.jpg"
+            },
+            {
+                "small": "assets/images/props/apartment/4-small.jpg",
+                "medium": "assets/images/props/apartment/4-medium.jpg",
+                "big": "assets/images/props/apartment/4-big.jpg"
+            },
+            {
+                "small": "assets/images/props/apartment/5-small.jpg",
+                "medium": "assets/images/props/apartment/5-medium.jpg",
+                "big": "assets/images/props/apartment/5-big.jpg"
+            }
+        ],
+        "plans": [
+            {
+                "name": "First floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1180,
+                    "unit": "ft²"
+                },
+                "rooms": 3,
+                "baths": 1,
+                "image": "assets/images/others/plan-1.jpg"
+            },
+            {
+                "name": "Second floor",
+                "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+                "area": {
+                    "value": 1200,
+                    "unit": "ft²"
+                },
+                "rooms": 5,
+                "baths": 2,
+                "image": "assets/images/others/plan-2.jpg"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Video with 'mat-video' plugin",
+                "link": "http://themeseason.com/data/videos/video-1.mp4"
+            },
+            {
+                "name": "Video with 'ngx-embed-video' plugin",
+                "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+            }
+        ],
+        "published": "2016-03-29 05:20:00",
+        "lastUpdate": "2019-06-26 14:20:00",
+        "views": 852
+    }    
+]

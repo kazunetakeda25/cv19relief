@@ -1,0 +1,134 @@
+{
+    "id": 4,
+    "title": "Spacious and warm flat", 
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+    "offerType": "Apartment",
+    "offerStatus": ["Hot Offer", "No Fees"],
+    "city": "Chicago",
+    "zipCode": "60604",
+    "neighborhood": ["Riverdale"],
+    "street": ["Riverdale Street #1"],
+    "location" : {
+        "lat": 41.878113,
+        "lng": -87.629799
+    },
+    "formattedAddress": "55 W Jackson Blvd, Chicago, IL 60604, USA", 
+    "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Gym", "Fireplace", "Sauna", "TV Cable", "WiFi"],
+    "featured": true, 
+    "priceDollar": {
+        "sale": 1450000,
+        "rent": null
+    },
+    "priceEuro": {
+        "sale": 1300000,
+        "rent": null
+    },
+    "bedrooms": 5,
+    "bathrooms": 2,
+    "garages": 2,
+    "area": {
+        "value": 1700,
+        "unit": "ft²"
+    },
+    "yearBuilt": 2002,
+    "ratingsCount": 3,
+    "ratingsValue": 220,
+    "additionalFeatures": [                
+        {
+            "name": "Heat",
+            "value": "Natural Gas"
+        },
+        {
+            "name": "Roof",
+            "value": "Composition/Shingle"
+        },
+        {
+            "name": "Floors",
+            "value": "Wall-to-Wall Carpet"
+        },
+        {
+            "name": "Water",
+            "value": "District/Public"
+        },
+        {
+            "name": "Cross Streets",
+            "value": "Orangethorpe-Gilbert"
+        },
+        {
+            "name": "Windows",
+            "value": "Skylights"
+        },
+        {
+            "name": "Flat",
+            "value": "5"
+        },
+        {
+            "name": "Childroom",
+            "value": "2"
+        }
+    ],
+    "gallery": [
+        {
+            "small": "assets/images/props/flat-2/1-small.jpg",
+            "medium": "assets/images/props/flat-2/1-medium.jpg",
+            "big": "assets/images/props/flat-2/1-big.jpg"
+        },
+        {
+            "small": "assets/images/props/flat-2/2-small.jpg",
+            "medium": "assets/images/props/flat-2/2-medium.jpg",
+            "big": "assets/images/props/flat-2/2-big.jpg"
+        },
+        {
+            "small": "assets/images/props/flat-2/3-small.jpg",
+            "medium": "assets/images/props/flat-2/3-medium.jpg",
+            "big": "assets/images/props/flat-2/3-big.jpg"
+        },
+        {
+            "small": "assets/images/props/flat-2/4-small.jpg",
+            "medium": "assets/images/props/flat-2/4-medium.jpg",
+            "big": "assets/images/props/flat-2/4-big.jpg"
+        },
+        {
+            "small": "assets/images/props/flat-2/5-small.jpg",
+            "medium": "assets/images/props/flat-2/5-medium.jpg",
+            "big": "assets/images/props/flat-2/5-big.jpg"
+        }
+    ],
+    "plans": [
+        {
+            "name": "First floor",
+            "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+            "area": {
+                "value": 1180,
+                "unit": "ft²"
+            },
+            "rooms": 3,
+            "baths": 1,
+            "image": "assets/images/others/plan-1.jpg"
+        },
+        {
+            "name": "Second floor",
+            "desc": "Plan description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
+            "area": {
+                "value": 1200,
+                "unit": "ft²"
+            },
+            "rooms": 5,
+            "baths": 2,
+            "image": "assets/images/others/plan-2.jpg"
+        }
+    ],
+    "videos": [
+        {
+            "name": "Video with 'mat-video' plugin",
+            "link": "http://themeseason.com/data/videos/video-1.mp4"
+        },
+        {
+            "name": "Video with 'ngx-embed-video' plugin",
+            "link": "https://www.youtube.com/watch?v=-NInBEdSvp8"
+        }
+    ],
+    "published": "2016-10-12 18:20:00",
+    "lastUpdate": "2019-06-11 14:20:00",
+    "views": 754
+}
